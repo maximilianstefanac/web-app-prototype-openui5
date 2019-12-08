@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="streuobst.webapp.controller.TreeDetail"
+	xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+    height="100%">
+
+    <ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				
+
+				<navigationActions>
+					<m:OverflowToolbarButton
+						type="Transparent"
+						icon="sap-icon://decline"
+						press=".handleClose"
+						tooltip="Close column"/>
+				</navigationActions>
+
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+    </ObjectPageLayout>
+	
+
+</mvc:View>

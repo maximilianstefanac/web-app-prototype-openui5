@@ -1,0 +1,18 @@
+<mvc:View
+	controllerName="streuobst.webapp.controller.Map"
+	xmlns="sap.m"
+    xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:so="streuobst.webapp.control"
+	displayBlock="true"
+    height="100%">
+
+    <!-- <f:DynamicPage class="sapUiNoContentPadding" height="100%"> -->
+    <f:DynamicPage class="sapUiNoContentPadding">
+        <f:content height="100%">
+            <!-- <Text text="Hello World" /> -->
+            <so:LeafletMap id="leafletMap"></so:LeafletMap>
+        </f:content>
+    </f:DynamicPage>
+
+</mvc:View>
