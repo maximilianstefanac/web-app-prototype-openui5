@@ -36,21 +36,25 @@
 				"bypassed": {
 				},
 				"async": true,
-				"homeRoute": "home"
+				"homeRoute": "map"
 			},
 			"routes": [
 				{
 					"pattern": "",
 					"name": "map",
 					"target": [
-						"map"
-					]
+						"map",
+						"treeDetail"
+					],
+					"layout": "OneColumn"
 				},{
 					"pattern": "detail",
 					"name": "treeDetail",
 					"target": [
+						"map",
 						"treeDetail"
-					]
+					],
+					"layout": "TwoColumnsBeginExpanded"
 				}
 			],
 			"targets": {

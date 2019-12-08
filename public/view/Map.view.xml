@@ -1,5 +1,6 @@
 <mvc:View
-	controllerName="streuobst.webapp.controller.Map"
+	id="mapview"
+    controllerName="streuobst.webapp.controller.Map"
 	xmlns="sap.m"
     xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc"

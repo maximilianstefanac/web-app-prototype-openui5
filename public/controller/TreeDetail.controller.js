@@ -23,7 +23,13 @@ sap.ui.define([
 		},
 
         handleClose: function () {
-            
+            this.oRouter.navTo("map");
+
+            var that = this;
+
+            setTimeout(function () {
+                console.log("close tree detail", that.getOwnerComponent().oMapControl.map.invalidateSize());
+            }, 300);
         }
     });
 });

@@ -4,6 +4,8 @@
     xmlns:m="sap.m"
     xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
 	displayBlock="true"
     height="100%">
 
@@ -17,19 +19,57 @@
 		upperCaseAnchorBar="false">
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
-				
-
 				<navigationActions>
 					<m:OverflowToolbarButton
 						type="Transparent"
 						icon="sap-icon://decline"
 						press=".handleClose"
-						tooltip="Close column"/>
+						tooltip="Close Detail View"/>
 				</navigationActions>
-
-				
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
+
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<core:icon
+					src="sap-icon://nutrition-activity"
+					size="3rem"
+					class="sapUiSmallMarginEnd" />
+			</m:FlexBox>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection title="Informationen zum Baum" titleUppercase="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Text text="Hello World" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Einträge am schwarzen Brett" titleUppercase="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Text text="Hello World" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Pflegehistorie" titleUppercase="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Text text="Hello World" />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
     </ObjectPageLayout>
 	
 

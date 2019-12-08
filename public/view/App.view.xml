@@ -6,7 +6,7 @@
 	height="100%">
 	<FlexibleColumnLayout
 		id="flexibleColumnLayout"
-		stateChange=".onStateChanged">
+		stateChange="onStateChanged">
 	</FlexibleColumnLayout>
 
 </mvc:View>

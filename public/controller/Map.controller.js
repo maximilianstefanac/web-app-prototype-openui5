@@ -12,9 +12,9 @@ sap.ui.define([
             var that = this
 
             return function (e) {
-                // this._map.invalidateSize();
-                // var oFCL = that.getView().getParent().getParent();
-                // oFCL.setLayout(fioriLibrary.LayoutType.TwoColumnsBeginExpanded);
+                
+
+                that.oRouter.navTo("treeDetail");
 
                 var leafletComponent = this;
 
@@ -23,15 +23,7 @@ sap.ui.define([
                     leafletComponent._map.panTo(e.latlng);
                 }, 200);
 
-                // var oNextUIState;
-                // that.getOwnerComponent().getHelper().then(function (oHelper) {
-                //     console.log(that);
-                //     oNextUIState = oHelper.getNextUIState(1);
-                //     that.oRouter.navTo("detail");
-                // }.bind(that));
-
-                console.log(that.oRouter);
-                that.oRouter.navTo("detail");
+                
             }
 
 			
@@ -41,6 +33,7 @@ sap.ui.define([
             var oMapControl = this.getView().byId("leafletMap");
             oMapControl.setMarkerClickHandler(this._openDetailPageFactory());
             this.oRouter = this.getOwnerComponent().getRouter();
+            this.getOwnerComponent().oMapControl = oMapControl;
         }
     });
 });

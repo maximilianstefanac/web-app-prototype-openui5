@@ -20,14 +20,7 @@ sap.ui.define([
 		},
 
 		onStateChanged: function (oEvent) {
-			var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow");
-			var sLayout = oEvent.getParameter("layout");
-
-
-			// Replace the URL with the new layout if a navigation arrow was used
-			if (bIsNavigationArrow) {
-				this.oRouter.navTo(this.currentRouteName, {layout: sLayout, product: this.currentProduct, supplier: this.currentSupplier}, true);
-			}
+			
 		},
 
 		onExit: function () {
