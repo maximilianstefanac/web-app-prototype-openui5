@@ -59,7 +59,7 @@
 								<form:content>
 									<m:Label text="Sorte"/>
 									<m:Text text="Elstar"/>
-									<m:Label text="Pflazjahr"/>
+									<m:Label text="Pflanzjahr"/>
 									<m:Text text="2000"/>
 									<m:Label text="Vitalität"/>
 									<m:ObjectStatus state="Success" text="gesund"/>
