@@ -19,6 +19,33 @@ sap.ui.define([
          var oModel = new JSONModel();
          this.setModel(oModel);
 
+
+         var treeCareModel = new JSONModel({items: [
+            {
+                date: "20.10.2019",
+                action: "Baumpflege"
+            },
+            {
+                date: "20.10.2018",
+                action: "Baumpflege"
+            },
+            {
+                date: "20.10.2017",
+                action: "Baumpflege"
+            },
+            {
+                date: "20.10.2016",
+                action: "Baumpflege"
+            },
+            {
+                date: "20.10.2015",
+                action: "Baumpflege"
+            }
+        ]});
+
+
+        this.setModel(treeCareModel, "treeCare");
+
          var oRouter = this.getRouter();
          oRouter.attachBeforeRouteMatched(this._onBeforeRouteMatched, this);
          oRouter.initialize();

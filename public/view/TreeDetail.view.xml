@@ -6,36 +6,37 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
 	displayBlock="true"
     height="100%">
 
     <ObjectPageLayout
 		id="ObjectPageLayout"
-		showTitleInHeaderContent="true"
 		alwaysShowContentHeader="false"
-		preserveHeaderStateOnScroll="false"
+		preserveHeaderStateOnScroll="true"
 		headerContentPinnable="true"
 		isChildPage="true"
 		upperCaseAnchorBar="false">
 		<headerTitle>
-			<ObjectPageDynamicHeaderTitle>
-				<navigationActions>
-					<m:OverflowToolbarButton
+			<ObjectPageHeader
+				objectTitle="Apfelbaum im Obst-Gen-Garten Bad Schönborn">
+				<actions>
+					<ObjectPageHeaderActionButton
 						type="Transparent"
 						icon="sap-icon://decline"
 						press=".handleClose"
 						tooltip="Close Detail View"/>
-				</navigationActions>
-			</ObjectPageDynamicHeaderTitle>
+				</actions>
+			</ObjectPageHeader>
 		</headerTitle>
 
 		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+			<!-- <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
 				<core:icon
 					src="sap-icon://nutrition-activity"
 					size="3rem"
 					class="sapUiSmallMarginEnd" />
-			</m:FlexBox>
+			</m:FlexBox> -->
 		</headerContent>
 
 		<sections>
@@ -43,7 +44,31 @@
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
-							<m:Text text="Hello World" />
+							<m:Image
+								src="./images/apple-tree.jpg"
+								height="10rem"/>
+							<form:SimpleForm
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="3"
+								columnsM="2">
+								<form:content>
+									<m:Label text="Sorte"/>
+									<m:Text text="Elstar"/>
+									<m:Label text="Pflazjahr"/>
+									<m:Text text="2000"/>
+									<m:Label text="Vitalität"/>
+									<m:ObjectStatus state="Success" text="gesund"/>
+									<m:Label text="Baumhöhe"/>
+									<m:Text text="5,43m"/>
+									<m:Label text="Kronendurchmesser"/>
+									<m:Text text="1.5m"/>
+								</form:content>
+							</form:SimpleForm>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
@@ -52,8 +77,35 @@
 			<ObjectPageSection title="Einträge am schwarzen Brett" titleUppercase="false">
 				<subSections>
 					<ObjectPageSubSection>
+						<actions>
+							<m:OverflowToolbarButton type="Transparent" text="Neuen Eintrag am schwarzen Brett erstellen" icon="sap-icon://create" />
+						</actions>
 						<blocks>
-							<m:Text text="Hello World" />
+							
+							<l:HorizontalLayout>
+							<m:GenericTile
+								header="Suche"
+								subheader="10.11.2018"
+								class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+								sizeBehavior="Responsive">
+								<m:tileContent>
+									<m:TileContent>
+										<m:Text text="Suche jemanden zur Baumpflege gegen drei Eimer Äpfel" />
+									</m:TileContent>
+								</m:tileContent>
+							</m:GenericTile>
+							<m:GenericTile
+								header="Biete"
+								subheader="1.10.2018"
+								class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+								sizeBehavior="Responsive">
+								<m:tileContent>
+									<m:TileContent>
+										<m:Text text="Habe Äpfel aus der aktuellen Ernte zu verschenken" />
+									</m:TileContent>
+								</m:tileContent>
+							</m:GenericTile>
+							</l:HorizontalLayout>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
@@ -62,15 +114,34 @@
 			<ObjectPageSection title="Pflegehistorie" titleUppercase="false">
 				<subSections>
 					<ObjectPageSubSection>
+						<actions>
+							<m:OverflowToolbarButton type="Transparent" text="Neuen Eintrag am schwarzen Brett erstellen" icon="sap-icon://create" />
+						</actions>
 						<blocks>
-							<m:Text text="Hello World" />
+							
+							<m:Table
+								items="{treeCare>/items}">
+								<m:columns>
+									<m:Column>
+										<m:Text text="Datum" />
+									</m:Column>
+									<m:Column>
+										<m:Text text="Aktion" />
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Inactive">
+										<m:cells>
+											<m:Text text="{treeCare>date}"/>
+											<m:Text text="{treeCare>action}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
 		</sections>
-
     </ObjectPageLayout>
-	
-
 </mvc:View>
